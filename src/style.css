@@ -1,0 +1,8 @@
+.app{
+    height: 100%;
+}
+
+.app  > main {
+    overflow-y: auto;
+    margin-top: 64px;
+ }

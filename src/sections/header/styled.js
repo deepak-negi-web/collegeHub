@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const StyleHeader = styled.header`
   width: 100%;
-  height: 56px;
+  height: 40px;
   position: fixed;
   top: 0;
   left: 0;
-  background: #555b6e;
+  background: #fff;
+  box-shadow: 0 8px 6px -6px #a8dadc;
 `;
 export const HamburgerWrapper = styled.div`
   @media (min-width: 769px) {
@@ -15,11 +16,16 @@ export const HamburgerWrapper = styled.div`
 `;
 export const BrandLogo = styled.div`
   margin-left: 1rem;
+  display: flex;
+  align-items: flex-end;
   .brand-link {
-    color: #fff;
+    color: #1d3557;
     font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
+  }
+  img {
+    width: 40px;
   }
   .brand-link:hover {
     text-decoration: none;
@@ -37,7 +43,7 @@ export const NavBar = styled.nav`
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   ul {
     list-type: none;
     display: flex;
@@ -48,12 +54,51 @@ export const NavBar = styled.nav`
     }
   }
   .link {
-    color: #fff;
+    color: #1d3557;
     font-size: 16px;
     text-decoration: none;
-    padding: 0 0.5rem;
+    padding: 8px;
   }
-  .link:hover {
-    text-decoration: underline;
+`;
+
+export const Dropdown = styled.div`
+  display: none;
+  padding: 4px;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  top: 40px;
+  right: -56px;
+  &: {
+    display: block;
+  }
+  .option {
+    color: #1d3557;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      background-color: #eff7f6;
+    }
+  }
+  .all-options {
+    color: #8338ec;
+    &:hover {
+      color: #3a86ff;
+    }
+  }
+`;
+
+export const Menu = styled.div`
+  position: relative;
+  display: inline-block;
+  padding: 8px;
+  &:hover {
+    border-bottom: 2px solid #e63946;
+  }
+  &:hover ${Dropdown} {
+    display: block;
   }
 `;

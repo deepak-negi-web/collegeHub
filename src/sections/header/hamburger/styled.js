@@ -16,7 +16,7 @@ export const HamburgerButton = styled.button`
   }
 
   .horz-line {
-    background: #fff;
+    background: #1d3557;
     width: 100%;
     height: 2px;
   }

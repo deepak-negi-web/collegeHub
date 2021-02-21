@@ -30,7 +30,7 @@ export const StyledNav = styled.nav`
     margin: 0.5rem;
   }
   .link {
-    color: #555b6e;
+    color: #1d3557;
     font-size: 18px;
     text-decoration: none;
   }
@@ -45,12 +45,12 @@ export const StyledNav = styled.nav`
     right: 12px;
     cursor: pointer;
     .close-icon {
-      color: #000;
+      color: #1d3557;
       font-size: 1.5rem;
     }
     &:hover {
       .close-icon {
-        color: #c19277;
+        color: #e63946;
       }
     }
   }

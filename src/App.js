@@ -9,7 +9,7 @@ function App() {
     setSidebar((prev) => !prev);
   };
   const closeSidebar = () => {
-    setSidebar((prev) => false);
+    setSidebar(false);
   };
   return (
     <div className="app">

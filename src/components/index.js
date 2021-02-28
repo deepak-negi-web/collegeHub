@@ -1,3 +1,3 @@
 import Backdrop from "./backdrop";
-
-export { Backdrop };
+import CarouselComp from "./carousel";
+export { Backdrop, CarouselComp };

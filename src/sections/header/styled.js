@@ -8,6 +8,7 @@ export const StyleHeader = styled.header`
   left: 0;
   background: #fff;
   box-shadow: 0 8px 6px -6px #a8dadc;
+  z-index: 10;
 `;
 export const HamburgerWrapper = styled.div`
   @media (min-width: 769px) {
@@ -69,9 +70,9 @@ export const Dropdown = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10000;
-  top: 40px;
+  top: 45px;
   right: -56px;
-  &: {
+  &:hover {
     display: block;
   }
   .option {

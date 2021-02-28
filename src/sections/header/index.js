@@ -82,17 +82,17 @@ export default function Header({ open }) {
         <BrandLogo>
           <img src={logoImage} alt="brand-logo" />
           <NavLink className="brand-link" to="/">
-            Collegehub
+            CollegeHub
           </NavLink>
         </BrandLogo>
         <Spacer />
         <ul>
           <Menu>
-            <NavLink className="link course-menu" to="/courses">
+            <NavLink className="link " to="/courses">
               Courses
             </NavLink>
             <Dropdown>
-              {courses.slice(0, 3).map((course) => {
+              {courses.slice(0, 4).map((course) => {
                 return (
                   <NavLink
                     key={course.id}
@@ -113,7 +113,7 @@ export default function Header({ open }) {
               Exam
             </NavLink>
             <Dropdown>
-              {exams.slice(0, 3).map((exam) => {
+              {exams.slice(0, 4).map((exam) => {
                 return (
                   <NavLink
                     key={exam.id}

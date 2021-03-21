@@ -92,7 +92,7 @@ export default function Header({ open }) {
               Courses
             </NavLink>
             <Dropdown>
-              {courses.slice(0, 4).map((course) => {
+              {courses.slice(0, 3).map((course) => {
                 return (
                   <NavLink
                     key={course.id}
@@ -113,7 +113,7 @@ export default function Header({ open }) {
               Exam
             </NavLink>
             <Dropdown>
-              {exams.slice(0, 4).map((exam) => {
+              {exams.slice(0, 3).map((exam) => {
                 return (
                   <NavLink
                     key={exam.id}

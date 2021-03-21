@@ -16,4 +16,9 @@ export const Wrapper = styled.div`
     color: #9d9d9d;
     font-weight: 400;
   }
+
+  .justify-para {
+    padding: 16px;
+    text-align: justify;
+  }
 `;

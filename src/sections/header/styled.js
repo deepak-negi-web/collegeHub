@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 export const StyleHeader = styled.header`
   width: 100%;
-  height: 40px;
+  height: 64px;
   position: fixed;
   top: 0;
   left: 0;
   background: #fff;
   box-shadow: 0 8px 6px -6px #a8dadc;
   z-index: 10;
+  a {
+    color: #1d3557;
+  }
 `;
 export const HamburgerWrapper = styled.div`
   @media (min-width: 769px) {
@@ -20,7 +23,6 @@ export const BrandLogo = styled.div`
   display: flex;
   align-items: flex-end;
   .brand-link {
-    color: #1d3557;
     font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
@@ -55,7 +57,6 @@ export const NavBar = styled.nav`
     }
   }
   .link {
-    color: #1d3557;
     font-size: 16px;
     text-decoration: none;
     padding: 8px;
@@ -70,11 +71,9 @@ export const Dropdown = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10000;
-  top: 45px;
+  top: 41px;
   right: -56px;
-  &:hover {
-    display: block;
-  }
+
   .option {
     color: #1d3557;
     padding: 12px 16px;

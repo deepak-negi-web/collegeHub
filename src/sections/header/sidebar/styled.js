@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const StyledNav = styled.nav`
-  display: ${(props) => (props.show ? "block" : "none")};
   height: 100%;
   width: 70%;
   max-width: 400px;

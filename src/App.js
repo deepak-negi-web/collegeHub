@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Main, Sidebar } from "./sections";
+import { Header, Main, Sidebar, Footer } from "./sections";
 import { Backdrop } from "./components";
 import "./style.css";
 
@@ -17,6 +17,7 @@ function App() {
       <Sidebar open={sidebar} close={closeSidebar} />
       <Backdrop show={sidebar} />
       <Main />
+      <Footer />
     </div>
   );
 }

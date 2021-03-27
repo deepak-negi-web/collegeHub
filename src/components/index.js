@@ -1,3 +1,5 @@
 import Backdrop from "./backdrop";
 import CarouselComp from "./carousel";
-export { Backdrop, CarouselComp };
+import Card from "./card";
+
+export { Backdrop, CarouselComp, Card };

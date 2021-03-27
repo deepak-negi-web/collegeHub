@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FooterWrapper } from "./styles.js";
 
 export default function Footer() {
@@ -12,13 +13,13 @@ export default function Footer() {
                 <h3>Courses</h3>
                 <ul>
                   <li>
-                    <a href="#">B.Tech</a>
+                    <Link>B.Tech</Link>
                   </li>
                   <li>
-                    <a href="#">MBA</a>
+                    <Link>MBA</Link>
                   </li>
                   <li>
-                    <a href="#">MBBS</a>
+                    <Link>MBBS</Link>
                   </li>
                 </ul>
               </div>
@@ -26,13 +27,13 @@ export default function Footer() {
                 <h3>Exam</h3>
                 <ul>
                   <li>
-                    <a href="#">CAT</a>
+                    <Link>CAT</Link>
                   </li>
                   <li>
-                    <a href="#">GATE</a>
+                    <Link>GATE</Link>
                   </li>
                   <li>
-                    <a href="#">LSAT</a>
+                    <Link>LSAT</Link>
                   </li>
                 </ul>
               </div>
@@ -40,29 +41,29 @@ export default function Footer() {
                 <h3>Colleges</h3>
                 <ul>
                   <li>
-                    <a href="#">IIT</a>
+                    <Link>IIT</Link>
                   </li>
                   <li>
-                    <a href="#">AIIMS</a>
+                    <Link>AIIMS</Link>
                   </li>
                   <li>
-                    <a href="#">NLSIU</a>
+                    <Link>NLSIU</Link>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-3 item social">
-                <a href="#">
+                <Link>
                   <i class="icon ion-social-facebook"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link>
                   <i class="icon ion-social-twitter"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link>
                   <i class="icon ion-social-snapchat"></i>
-                </a>
-                <a href="#">
+                </Link>
+                <Link>
                   <i class="icon ion-social-instagram"></i>
-                </a>
+                </Link>
                 <p class="copyright">CollegeHub © 2020</p>
               </div>
             </div>

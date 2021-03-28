@@ -1,13 +1,13 @@
-import engineering from "./assets/engineer.jpg";
-import medical from "./assets/medical.jpg";
-import architecture from "./assets/architecture.jpg";
-import computerApplication from "./assets/computerApplication.jpg";
-import dental from "./assets/dental.jpg";
-import hotelManagement from "./assets/hotelManagement.jpg";
-import management from "./assets/management.jpg";
-import massCommunication from "./assets/massCommunication.jpg";
-import pharmacy from "./assets/pharmacy.jpg";
-import law from "./assets/law.jpg";
+import engineering from "./assets/engineer_opt.jpg";
+import medical from "./assets/medical_opt.jpg";
+import architecture from "./assets/architecture_opt.jpg";
+import computerApplication from "./assets/computerApplication_opt.jpg";
+import dental from "./assets/dental_opt.jpg";
+import hotelManagement from "./assets/hotelManagement_opt.jpg";
+import management from "./assets/management_opt.jpg";
+import massCommunication from "./assets/massCommunication_opt.jpg";
+import pharmacy from "./assets/pharmacy_opt.jpg";
+import law from "./assets/law_opt.jpg";
 
 export const courses = [
   {
@@ -74,52 +74,178 @@ export const exams = [
 export const courseCategories = [
   {
     title: "Engineering",
-    info: "BE/B.Tech | ME/M.Tech",
+    courses: [
+      {
+        id: "1-be",
+        title: "be",
+      },
+      {
+        id: "1-b.tech",
+        title: "b.tech",
+      },
+      {
+        id: "1-me",
+        title: "me",
+      },
+      {
+        id: "1-m.tech",
+        title: "m.tech",
+      },
+    ],
     imagePath: engineering,
   },
   {
     title: "Medical",
-    info: "PMT | BHMS | BAMS",
+    courses: [
+      {
+        id: "1-pmt",
+        title: "pmt",
+      },
+      {
+        id: "1-bhms",
+        title: "bhms",
+      },
+      {
+        id: "1-bams",
+        title: "bams",
+      },
+    ],
     imagePath: medical,
   },
   {
     title: "Architecture",
-    info: "B.ARCH | B.PLANNING | M.ARCH |M.PLANNING",
+    courses: [
+      {
+        id: "1-b.arch",
+        title: "b.arch",
+      },
+      {
+        id: "1-b.planning",
+        title: "b.planning",
+      },
+      {
+        id: "1-m.arch",
+        title: "m.arch",
+      },
+      {
+        id: "1-m.planning",
+        title: "m.planning",
+      },
+    ],
     imagePath: architecture,
   },
   {
     title: "Computer Application",
-    info: "BCA | MCA",
+    courses: [
+      {
+        id: "1-bca",
+        title: "bca",
+      },
+      {
+        id: "1-mca",
+        title: "mca",
+      },
+    ],
     imagePath: computerApplication,
   },
   {
     title: "Dental",
-    info: "BDS | MDS",
+    courses: [
+      {
+        id: "1-bds",
+        title: "bds",
+      },
+      {
+        id: "1-mds",
+        title: "mds",
+      },
+    ],
     imagePath: dental,
   },
   {
     title: "Hotel Management",
-    info: "BHM | MHM",
+    courses: [
+      {
+        id: "1-bhm",
+        title: "bhm",
+      },
+      {
+        id: "1-mhm",
+        title: "mhm",
+      },
+    ],
     imagePath: hotelManagement,
   },
   {
     title: "Management",
-    info: "BBA/BBM | MBA/PGDM | MMS | MHA",
+    courses: [
+      {
+        id: "1-bba",
+        title: "bba",
+      },
+      {
+        id: "1-bbm",
+        title: "bbm",
+      },
+      {
+        id: "1-mba",
+        title: "mba",
+      },
+      {
+        id: "1-pgdm",
+        title: "pgdm",
+      },
+      {
+        id: "1-mms",
+        title: "mms",
+      },
+      {
+        id: "1-mha",
+        title: "mha",
+      },
+    ],
     imagePath: management,
   },
   {
     title: "Mass Communication",
-    info: "BMM | MMC",
+    courses: [
+      {
+        id: "1-bmm",
+        title: "bmm",
+      },
+      {
+        id: "1-mmc",
+        title: "mmc",
+      },
+    ],
     imagePath: massCommunication,
   },
   {
     title: "Pharmacy",
-    info: "B.PHARM | M.PHARM",
+    courses: [
+      {
+        id: "1-b.pharm",
+        title: "b.pharm",
+      },
+      {
+        id: "1-m.pharm",
+        title: "m.pharm",
+      },
+    ],
     imagePath: pharmacy,
   },
   {
     title: "Law",
-    info: "LLB | LLM",
+    courses: [
+      {
+        id: "1-llb",
+        title: "llb",
+      },
+      {
+        id: "1-llm",
+        title: "llm",
+      },
+    ],
     imagePath: law,
   },
 ];

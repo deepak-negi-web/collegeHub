@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const Wrapper = styled.div`
   .card {
     position: relative;
@@ -17,14 +16,16 @@ export const Wrapper = styled.div`
   }
 
   .card:before {
+    background-image: ${({ bgImg }) => `url(${bgImg})`};
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 110%;
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 110%;
-    background-size: cover;
-    background-position: 0 0;
     transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
   }
@@ -59,9 +60,7 @@ export const Wrapper = styled.div`
     transform: translateY(-50%);
     transition: transform calc(700ms * 2) cubic-bezier(0.19, 1, 0.22, 1);
   }
-  .card:before {
-    background-image: ${({ bgImg }) => `url(${bgImg})`};
-  }
+
   .content {
     position: relative;
     display: flex;
@@ -96,6 +95,10 @@ export const Wrapper = styled.div`
     color: white;
     background-color: black;
     border: none;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
   .btn:hover {
     background-color: #0d0d0d;

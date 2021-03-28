@@ -22,15 +22,7 @@ export default function Courses() {
       /> */}
       <div className="card-wrapper">
         {courseCategories.map((category, index) => {
-          return (
-            <Card
-              key={index}
-              title={category.title}
-              info={category.info}
-              image={category.imagePath}
-              buttonName="Explore"
-            />
-          );
+          return <Card key={index} data={category} buttonName="Explore" />;
         })}
       </div>
     </Wrapper>

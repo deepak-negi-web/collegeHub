@@ -1,4 +1,5 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
 import { NavLink } from "react-router-dom";
 import {
   StyleHeader,
@@ -11,9 +12,24 @@ import {
 } from "./styled";
 import HamburgerButton from "./hamburger";
 import logoImage from "../../assets/logo.jpg";
-import { courses, exams } from "../../fakeData";
+import { exams } from "../../fakeData";
+import { getCourseAbbreviation } from "../../utils";
+import { COURSES } from "../../graphql";
+import { Loader } from "../../components";
 
 export default function Header({ open }) {
+  const {
+    loading: isCoursesLoading,
+    data: { courses_courses: courses = [] } = {},
+  } = useQuery(COURSES, {
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
+  if (isCoursesLoading) {
+    return <Loader />;
+  }
   return (
     <StyleHeader>
       <NavBar>
@@ -33,19 +49,24 @@ export default function Header({ open }) {
               Courses
             </NavLink>
             <Dropdown>
-              {courses.slice(0, 3).map((course) => {
+              {courses.map((course) => {
                 return (
                   <NavLink
-                    key={course.id}
+                    key={course?.id}
                     className="option"
-                    to={`/courses/:${course.id}`}
+                    to={`/courses/${course?.id}/${getCourseAbbreviation(
+                      course?.name
+                    )}`}
                   >
-                    {course.title}
+                    {getCourseAbbreviation(course?.name)}
                   </NavLink>
                 );
               })}
               <NavLink className="option all-options" to="/courses">
                 All Courses
+              </NavLink>
+              <NavLink className="option all-options" to="/categories">
+                All Category
               </NavLink>
             </Dropdown>
           </Menu>

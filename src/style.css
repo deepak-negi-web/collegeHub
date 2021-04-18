@@ -5,10 +5,3 @@
     box-sizing: border-box;
     outline: none;
 }
-.app{
-    height: 100%;
-}
-
-.app  > main {
-    margin-top: 64px;
- }

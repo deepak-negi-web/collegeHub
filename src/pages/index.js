@@ -1,6 +1,7 @@
 import Home from "./home";
-import Courses from "./courses";
+import CoursesByCategory from "./coursesByCategory";
+import CourseCategories from "./courseCategories";
 import Course from "./course";
 import College from "./college";
 
-export { Home, Courses, Course, College };
+export { Home, CourseCategories, CoursesByCategory, Course, College };

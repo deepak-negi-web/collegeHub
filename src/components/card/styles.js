@@ -151,3 +151,86 @@ export const Wrapper = styled.div`
     }
   }
 `;
+
+export const InfoCard = styled.div`
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  border-radius: 4.4px;
+  box-shadow: rgba(207, 207, 207, 0.5) 0px 0px 4px 0px;
+  transition: all 0.2s ease-in 0s;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  &:hover {
+    box-shadow: rgba(207, 207, 207, 0.6) 2px 2px 4px 2px;
+  }
+
+  .left .left-info-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .left .left-info-div h1 {
+    font-size: 19.6px;
+    color: rgb(77, 88, 108);
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .left .left-info-div .flex {
+    display: flex;
+    font-size: 12px;
+    color: rgb(62, 174, 141);
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .left .left-info-div .flex small {
+    margin-right: 10px;
+  }
+
+  .right .right-info-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .right .right-info-div h1 {
+    display: flex;
+    font-size: 16px;
+    color: rgb(62, 174, 141);
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .right .right-info-div button {
+    width: auto;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 800px;
+    background: #e76f51;
+    border: 1px solid #e76f51;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .right .right-info-div button:hover {
+    box-shadow: #e76f51 0px 0px 4px 0;
+  }
+
+  .right .right-info-div h1 {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .right .right-info-div h1:hover {
+    text-decoration: underline;
+  }
+`;

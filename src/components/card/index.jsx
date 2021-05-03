@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Wrapper, InfoCard } from "./styles";
 import { getString, stringCapitalize } from "../../utils";
 
 const CourseInfoCard = ({ data }) => {
-  // const history = useHistory();
+  const { pathname } = useLocation();
   // const handleCardClick = () => {
   //   history.push(`/category/${data?.title}`);
   // };
@@ -13,6 +13,7 @@ const CourseInfoCard = ({ data }) => {
     <InfoCard>
       <div class="left">
         <div class="left-info-div">
+          {console.log(data)}
           <h1>{data?.course?.name}</h1>
           <div class="flex">
             <small>{data?.course?.duration} Years</small>
@@ -24,7 +25,9 @@ const CourseInfoCard = ({ data }) => {
       <div class="right">
         <div class="right-info-div">
           <button>Apply Now</button>
-          <h1>Check Colleges Offering this course</h1>
+          <Link to={`${pathname}/${data?.course?.id}`}>
+            Check Colleges Offering this course
+          </Link>
         </div>
       </div>
     </InfoCard>
@@ -32,6 +35,7 @@ const CourseInfoCard = ({ data }) => {
 };
 
 export const CourseCategoryCard = ({ data, buttonName }) => {
+  const { pathname } = useLocation();
   return (
     <Wrapper bgImg={data?.assets?.images[0]}>
       <div className="card">
@@ -40,7 +44,7 @@ export const CourseCategoryCard = ({ data, buttonName }) => {
           {/* <p className="copy">
             {getString(data.courses, " | ", true, "title")}
           </p> */}
-          <Link to={`categories/${data?.title?.toLowerCase()}`}>
+          <Link to={`${pathname}/${data?.title?.toLowerCase()}`}>
             <button className="btn">{buttonName}</button>
           </Link>
         </div>

@@ -24,3 +24,32 @@ export const COURSES_BY_CATEGORY = gql`
     }
   }
 `;
+
+export const COLLEGES_BY_COURSE = gql`
+  subscription COLLEGES_BY_COURSE($courseId: Int!) {
+    colleges_college(
+      where: { college_courses: { courseId: { _eq: $courseId } } }
+    ) {
+      id
+      info
+      location
+      metaDetails
+      name
+      assets
+      college_courses {
+        id
+        hasStreams
+        streams
+        eligibility
+        fees
+        courseId
+        collegeId
+        course {
+          id
+          duration
+          name
+        }
+      }
+    }
+  }
+`;

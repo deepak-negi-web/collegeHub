@@ -200,7 +200,7 @@ export const InfoCard = styled.div`
     justify-content: flex-end;
   }
 
-  .right .right-info-div h1 {
+  .right .right-info-div a {
     display: flex;
     font-size: 16px;
     color: rgb(62, 174, 141);
@@ -225,12 +225,12 @@ export const InfoCard = styled.div`
     box-shadow: #e76f51 0px 0px 4px 0;
   }
 
-  .right .right-info-div h1 {
+  .right .right-info-div a {
     margin-top: 10px;
     cursor: pointer;
   }
 
-  .right .right-info-div h1:hover {
+  .right .right-info-div a:hover {
     text-decoration: underline;
   }
 `;

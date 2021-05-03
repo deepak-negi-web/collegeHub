@@ -6,13 +6,13 @@ import { COURSES_BY_CATEGORY } from "../../graphql";
 import { Card, Loader } from "../../components";
 
 export default function CoursesByCategory() {
-  const { title } = useParams();
+  const { courseTitle } = useParams();
   const [courses, setCourses] = useState([]);
   const { loading: isCourseLoading, error: hasCourseError } = useSubscription(
     COURSES_BY_CATEGORY,
     {
       variables: {
-        courseCategoryTitle: title,
+        courseCategoryTitle: courseTitle,
       },
       onSubscriptionData: ({
         subscriptionData: {

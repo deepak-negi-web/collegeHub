@@ -4,14 +4,23 @@ import {
   Home,
   CourseCategories,
   CoursesByCategory,
+  CollegesByCourse,
   Course,
-  College,
 } from "../../pages";
 export default function Main() {
   return (
     <main>
       <Switch>
-        <Route exact path="/categories/:title" component={CoursesByCategory} />
+        <Route
+          exact
+          path="/categories/:courseTitle/:courseId"
+          component={CollegesByCourse}
+        />
+        <Route
+          exact
+          path="/categories/:courseTitle"
+          component={CoursesByCategory}
+        />
         <Route exact path="/categories" component={CourseCategories} />
         {/* <Route exact path="/courses/:id" component={Course} /> */}
         {/* <Route exact path="/courses" component={Courses} /> */}

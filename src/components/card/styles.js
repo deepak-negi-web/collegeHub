@@ -234,3 +234,87 @@ export const InfoCard = styled.div`
     text-decoration: underline;
   }
 `;
+
+export const CollegeInfoCard = styled.div`
+  max-width: 350px;
+  max-height: 300px;
+  position: relative;
+  width: 100%;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
+  .college_img_wrapper {
+    width: 100%;
+    height: 150px;
+    background: url("http://www.innovativegroupofcolleges.com/images/banner-img.jpg")
+      center/cover;
+    .bg_overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+    img {
+      width: 100px;
+      height: 50px;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .college_name {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      position: absolute;
+      bottom: 4px;
+      left: 8px;
+    }
+    small {
+      color: #fff;
+      font-size: 8px;
+      position: absolute;
+      bottom: 0;
+      left: 8px;
+    }
+  }
+  .college_info_wrapper {
+    padding: 8px 0;
+    .row {
+      display: flex;
+      margin: 0;
+      align-items: center;
+      justify-content: space-around;
+      p {
+        color: #1d3557;
+        font-size: 16px;
+      }
+    }
+    .apply_now_button {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 8px;
+      margin-top: 1rem;
+      button {
+        outline: none;
+        border: none;
+        white-space: nowrap;
+        appearance: button;
+        transition: all 0.2s ease 0s;
+        cursor: pointer;
+        min-height: 40px;
+        display: flex;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        background-color: rgb(30, 180, 212);
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+`;

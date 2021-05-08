@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSubscription } from "@apollo/client";
 import { Wrap } from "./styles";
 import { COLLEGES_BY_COURSE } from "../../graphql";
-import { Loader } from "../../components";
+import { Loader, Card } from "../../components";
 
 export default function CollegesByCourses() {
   const { courseId } = useParams();
@@ -29,9 +29,11 @@ export default function CollegesByCourses() {
   }
   return (
     <Wrap>
-      {colleges.map((college) => {
-        return <h1 key={college.id}>{college?.name || ""}</h1>;
-      })}
+      <div className="cards_wrapper">
+        {colleges.map((college) => {
+          return <Card type="college-info" key={college.id} data={college} />;
+        })}
+      </div>
     </Wrap>
   );
 }

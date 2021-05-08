@@ -13,7 +13,7 @@ export default function Main() {
       <Switch>
         <Route
           exact
-          path="/categories/:courseTitle/:courseId"
+          path="/categories/:courseTitle/:courseId/colleges"
           component={CollegesByCourse}
         />
         <Route

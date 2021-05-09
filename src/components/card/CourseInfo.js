@@ -12,7 +12,6 @@ const CourseInfoCard = ({ data }) => {
     <InfoCard>
       <div class="left">
         <div class="left-info-div">
-          {console.log(data)}
           <h1>{data?.course?.name}</h1>
           <div class="flex">
             <small>{data?.course?.duration} Years</small>

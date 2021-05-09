@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       <Header open={toggleSidebar} />
       <Sidebar open={sidebar} close={closeSidebar} />
-      <Backdrop show={sidebar} />
+      <Backdrop show={sidebar} close={closeSidebar} />
       <Main />
       <Footer />
     </div>

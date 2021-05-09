@@ -162,6 +162,7 @@ export const InfoCard = styled.div`
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: baseline;
   justify-content: space-between;
 
@@ -193,11 +194,15 @@ export const InfoCard = styled.div`
   .left .left-info-div .flex small {
     margin-right: 10px;
   }
+  .right {
+    width: 100%;
+  }
 
   .right .right-info-div {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .right .right-info-div a {
@@ -211,7 +216,6 @@ export const InfoCard = styled.div`
 
   .right .right-info-div button {
     width: auto;
-    height: 30px;
     font-size: 14px;
     font-weight: 800px;
     background: #e76f51;
@@ -219,6 +223,7 @@ export const InfoCard = styled.div`
     border-radius: 50px;
     color: #fff;
     cursor: pointer;
+    padding: 0 1rem;
   }
 
   .right .right-info-div button:hover {
@@ -226,12 +231,37 @@ export const InfoCard = styled.div`
   }
 
   .right .right-info-div a {
-    margin-top: 10px;
     cursor: pointer;
   }
 
   .right .right-info-div a:hover {
     text-decoration: underline;
+  }
+  @media (max-width: 769px) {
+    .left .left-info-div h1 {
+      font-size: 14px;
+    }
+    .right .right-info-div a {
+      display: flex;
+      font-size: 12px;
+    }
+
+    .right .right-info-div button {
+      height: 20px;
+      font-size: 12px;
+    }
+
+    .right .right-info-div button:hover {
+      box-shadow: #e76f51 0px 0px 4px 0;
+    }
+
+    .right .right-info-div a {
+      margin-top: 4px;
+    }
+
+    .right .right-info-div a:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

@@ -19,6 +19,7 @@ export default function CoursesByCategory() {
           data: { courses_courses_courseCategory = [] } = {},
         } = {},
       } = {}) => {
+        console.log(courses_courses_courseCategory);
         setCourses(courses_courses_courseCategory);
       },
     }
@@ -43,9 +44,7 @@ export default function CoursesByCategory() {
           />
         );
       })}
-      {courses.length === 0 && (
-        <div>No course Available for this category!</div>
-      )}
+      {!courses.length && <div>No course Available for this category!</div>}
     </Wrapper>
   );
 }

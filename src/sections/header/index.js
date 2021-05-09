@@ -10,7 +10,7 @@ import {
   Dropdown,
   Menu,
 } from "./styled";
-import HamburgerButton from "./hamburger";
+import { HamburgerIcon } from "../../assets/icons";
 import logoImage from "../../assets/logo.jpg";
 import { exams } from "../../fakeData";
 import { getCourseAbbreviation } from "../../utils";
@@ -34,7 +34,9 @@ export default function Header({ open }) {
     <StyleHeader>
       <NavBar>
         <HamburgerWrapper>
-          <HamburgerButton open={open} />
+          <span onClick={open}>
+            <HamburgerIcon size="30" color="#1d3557" />
+          </span>
         </HamburgerWrapper>
         <BrandLogo>
           <img src={logoImage} alt="brand-logo" />

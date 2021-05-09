@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSubscription } from "@apollo/client";
 import { Wrap } from "./styles";
 import { COLLEGES_BY_COURSE } from "../../graphql";
@@ -33,6 +33,14 @@ export default function CollegesByCourses() {
         {colleges.map((college) => {
           return <Card type="college-info" key={college.id} data={college} />;
         })}
+        {!colleges.length && (
+          <div className="empty_fallback">
+            Ohh! No colleges data Available for this course!
+            <br />
+            Don't worry we will add more colleges soon... <br />
+            Checkout other <Link to="/categories">courses</Link> <br />
+          </div>
+        )}
       </div>
     </Wrap>
   );

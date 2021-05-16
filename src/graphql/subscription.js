@@ -53,3 +53,28 @@ export const COLLEGES_BY_COURSE = gql`
     }
   }
 `;
+
+export const COLLEGE_INFO = gql`
+  subscription COLLEGE_INFO($collegeId: Int!) {
+    colleges_college_by_pk(id: $collegeId) {
+      id
+      name
+      assets
+      info
+      location
+      metaDetails
+      college_courses(order_by: { fees: asc }) {
+        eligibility
+        fees
+        hasStreams
+        id
+        streams
+        course {
+          duration
+          id
+          name
+        }
+      }
+    }
+  }
+`;

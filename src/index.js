@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
-import { DataProvider } from "./Providers";
+import { DataProvider, CollegeProvider } from "./Providers";
 ReactDOM.render(
   <DataProvider>
-    <Router>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Router>
+    <CollegeProvider>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
+    </CollegeProvider>
   </DataProvider>,
   document.getElementById("root")
 );

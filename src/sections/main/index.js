@@ -5,6 +5,7 @@ import {
   CourseCategories,
   CoursesByCategory,
   CollegesByCourse,
+  College,
   Course,
 } from "../../pages";
 export default function Main() {
@@ -22,6 +23,11 @@ export default function Main() {
           component={CoursesByCategory}
         />
         <Route exact path="/categories" component={CourseCategories} />
+        <Route
+          exact
+          path="/categories/:courseTitle/:courseId/colleges/:collegeId"
+          component={College}
+        />
         {/* <Route exact path="/courses/:id" component={Course} /> */}
         {/* <Route exact path="/courses" component={Courses} /> */}
         <Route exact path="/exams/:id">

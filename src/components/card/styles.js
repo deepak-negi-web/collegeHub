@@ -154,7 +154,6 @@ export const Wrapper = styled.div`
 
 export const InfoCard = styled.div`
   width: 100%;
-  height: 80px;
   background: #fff;
   border-radius: 4.4px;
   box-shadow: rgba(207, 207, 207, 0.5) 0px 0px 4px 0px;
@@ -257,6 +256,7 @@ export const InfoCard = styled.div`
 
     .right .right-info-div a {
       margin-top: 4px;
+      margin-left: 4px;
     }
 
     .right .right-info-div a:hover {

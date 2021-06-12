@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { ScrollToTop } from "../../components";
 import {
   Home,
   CourseCategories,
@@ -46,6 +47,7 @@ export default function Main() {
           <Home />
         </Route>
       </Switch>
+      <ScrollToTop showBelow={250} />
     </main>
   );
 }

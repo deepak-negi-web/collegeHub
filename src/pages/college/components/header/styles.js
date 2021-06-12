@@ -16,22 +16,18 @@ export const Wrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: #c33764;
-    background: -webkit-linear-gradient(
+    background: linear-gradient(
       rgba(29, 38, 113, 0.4),
       rgba(195, 55, 100, 0.4)
     );
-    background: linear-gradient(
-      rgba(29, 38, 113, 0.6),
-      rgba(195, 55, 100, 0.6)
-    );
   }
   .college_logo_img {
-    width: 250px;
+    width: 100px;
     height: 100px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 8px;
+    left: 8px;
+    border-radius: 50%;
   }
   .college_info_div {
     position: absolute;

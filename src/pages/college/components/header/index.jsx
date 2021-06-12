@@ -18,13 +18,13 @@ export default function CollegeHeader() {
     <Wrapper>
       <img
         className="college_bg_img"
-        src="http://www.innovativegroupofcolleges.com/images/banner-img.jpg"
+        src={college?.assets?.images?.main}
         alt="college-header"
       />
       <div className="overlay_div" />
       <img
         className="college_logo_img"
-        src="http://www.innovativegroupofcolleges.com/images/logo.png"
+        src={college?.assets?.images?.logo}
         alt="college-header"
       />
       <div className="college_info_div">

@@ -12,6 +12,7 @@ export default function College() {
   const { collegeId } = useParams();
   const { addCollegeInfo } = useCollege();
   const [college, setCollege] = useState({});
+  const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   //subscription query for getting college info using collegeId
@@ -25,6 +26,16 @@ export default function College() {
       setCollege(colleges_college_by_pk);
       setIsLoading(false);
       addCollegeInfo(colleges_college_by_pk);
+      const requiredObj = Object.keys(
+        colleges_college_by_pk?.assets?.images
+      ).filter((key) => key !== "main" && key !== "logo");
+      const keyVal = requiredObj.map((obj) => {
+        return {
+          [obj]: colleges_college_by_pk?.assets?.images[obj],
+        };
+      });
+
+      setImages(keyVal);
     },
   });
 
@@ -98,20 +109,60 @@ export default function College() {
         </section>
         <section id="section-2">
           <h1 className="sub-heading">Courses & fees</h1>
-          <p className="about-clg">coming soon...</p>
+          <main className="fee-details">
+            <table>
+              <thead>
+                <tr class="table100-head">
+                  <th class="column1">Course</th>
+                  <th class="column2">Fees(yearly)</th>
+                  <th class="column3">duration</th>
+                  <th class="column4">Eligibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                {college?.college_courses.map((item) => {
+                  return (
+                    <tr>
+                      <td class="column1">{item?.course?.name || "N/A"}</td>
+                      <td class="column2">{item?.fees?.fee || "N/A"}</td>
+                      <td class="column3">{item?.course?.duration || "N/A"}</td>
+                      <td class="column4">{item?.eligibility[0] || "N/A"}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </main>
         </section>
         <section id="section-3">
           <h1 className="sub-heading">Gallery</h1>
-          <p className="about-clg">coming soon...</p>
+          {images.map((image, index) => {
+            return (
+              <div className="image-category">
+                <h2 key={index} className="image-category-head">
+                  {Object.keys(image)[0]}
+                </h2>
+                <div className="grid-view">
+                  {image[Object.keys(image)[0]].map((url) => {
+                    return (
+                      <div className="img-wrap">
+                        <img src={url} alt="obj" className="gallery-img" />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </section>
-        <section id="section-4">
+        {/* <section id="section-4">
           <h1 className="sub-heading">Faculty</h1>
           <p className="about-clg">coming soon...</p>
         </section>
         <section id="section-5">
           <h1 className="sub-heading">Facility</h1>
           <p className="about-clg">coming soon...</p>
-        </section>
+        </section> */}
       </div>
     </Wrapper>
   );

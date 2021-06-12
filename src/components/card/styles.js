@@ -278,8 +278,7 @@ export const CollegeInfoCard = styled.div`
   .college_img_wrapper {
     width: 100%;
     height: 150px;
-    background: url("http://www.innovativegroupofcolleges.com/images/banner-img.jpg")
-      center/cover;
+    background: ${({ mainImage }) => `url(${mainImage}) center/cover`};
     .bg_overlay {
       width: 100%;
       height: 100%;
@@ -287,12 +286,12 @@ export const CollegeInfoCard = styled.div`
       position: relative;
     }
     img {
-      width: 100px;
-      height: 50px;
-      object-fit: contain;
+      width: 40px;
+      height: 40px;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 4px;
+      left: 4px;
+      border-radius: 50%;
     }
     .college_name {
       color: #fff;

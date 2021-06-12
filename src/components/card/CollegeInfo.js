@@ -8,7 +8,7 @@ export default function CollegeInfo({ data }) {
     info = "N/A",
     metaDetails = {},
     name = "N/A",
-    assets = [],
+    assets = {},
     location = "",
     college_courses = [],
   } = data;
@@ -19,14 +19,11 @@ export default function CollegeInfo({ data }) {
   );
   console.log(courseId, college_courses, course);
   return (
-    <CollegeInfoCard>
+    <CollegeInfoCard mainImage={assets?.images?.main}>
       <div className="college_img_wrapper">
         <div className="bg_overlay">
           <h1 className="college_name">{name}</h1>
-          <img
-            src="http://www.innovativegroupofcolleges.com/images/logo.png"
-            alt="logo"
-          />
+          <img src={assets?.images?.logo} alt="logo" />
           <small>{location}</small>
         </div>
       </div>

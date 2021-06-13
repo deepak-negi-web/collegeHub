@@ -266,7 +266,7 @@ export const InfoCard = styled.div`
 `;
 
 export const CollegeInfoCard = styled.div`
-  max-width: 350px;
+  max-width: 400px;
   max-height: 300px;
   position: relative;
   width: 100%;

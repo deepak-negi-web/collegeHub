@@ -1,26 +1,44 @@
 import React, { useState } from "react";
 import { useSubscription } from "@apollo/client";
 import { Wrapper } from "./styles";
-import { Card, Loader } from "../../components";
-import { COURSE_CATEGORIES } from "../../graphql";
+import { Card, Loader, InlineLoader } from "../../components";
+import { COURSE_CATEGORIES, COURSE_CATEGORIES_TOTAL } from "../../graphql";
+import InfiniteScroll from "react-infinite-scroll-component";
 // import { courseCategories } from "../../fakeData";
 
 export default function Courses() {
   const [courseCategories, setCourseCategories] = useState([]);
+  const [totalCategories, setTotalCategories] = useState(0);
+  const [limit, setLimit] = useState(9);
   const { loading, error } = useSubscription(COURSE_CATEGORIES, {
+    variables: {
+      limit,
+    },
     onSubscriptionData: ({
       subscriptionData: { data: { courses_courseCategory = [] } = {} } = {},
     } = {}) => {
-      console.log(courses_courseCategory);
       setCourseCategories(courses_courseCategory);
     },
   });
+  const { loading: totalCategoriesLoading, error: hasErrorInTotal } =
+    useSubscription(COURSE_CATEGORIES_TOTAL, {
+      onSubscriptionData: ({
+        subscriptionData: { data: { totalCategories = [] } = {} } = {},
+      } = {}) => {
+        console.log({ totalCategories: totalCategories?.aggregate?.count });
+        setTotalCategories(totalCategories?.aggregate?.count);
+      },
+    });
 
-  if (loading) {
+  const loadMoreHandler = () => {
+    setLimit((prev) => prev + 6);
+  };
+
+  if (loading || totalCategoriesLoading) {
     return <Loader />;
   }
-  if (error) {
-    console.log(error);
+  if (error || hasErrorInTotal) {
+    console.log(error || hasErrorInTotal);
   }
   return (
     <Wrapper>
@@ -32,13 +50,25 @@ export default function Courses() {
           seek information that you find truly interested.
         </p>
       </div>
-      <div className="card-wrapper">
-        {courseCategories.map((category) => {
-          return (
-            <Card key={category?.title} data={category} buttonName="Explore" />
-          );
-        })}
-      </div>
+
+      <InfiniteScroll
+        dataLength={courseCategories.length} //This is important field to render the next data
+        next={loadMoreHandler}
+        hasMore={courseCategories.length < totalCategories}
+        loader={<InlineLoader />}
+      >
+        <div className="card-wrapper">
+          {courseCategories.map((category) => {
+            return (
+              <Card
+                key={category?.title}
+                data={category}
+                buttonName="Explore"
+              />
+            );
+          })}
+        </div>
+      </InfiniteScroll>
     </Wrapper>
   );
 }

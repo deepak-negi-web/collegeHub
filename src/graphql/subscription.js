@@ -1,10 +1,19 @@
 import { gql } from "@apollo/client";
 
 export const COURSE_CATEGORIES = gql`
-  subscription COURSE_CATEGORIES {
-    courses_courseCategory {
+  subscription COURSE_CATEGORIES($limit: Int!) {
+    courses_courseCategory(limit: $limit, order_by: { title: desc }) {
       assets
       title
+    }
+  }
+`;
+export const COURSE_CATEGORIES_TOTAL = gql`
+  subscription COURSE_CATEGORIES_TOTAL {
+    totalCategories: courses_courseCategory_aggregate {
+      aggregate {
+        count
+      }
     }
   }
 `;

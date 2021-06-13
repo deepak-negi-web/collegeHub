@@ -4,9 +4,10 @@ import { useSubscription } from "@apollo/client";
 import { Wrap } from "./styles";
 import { COLLEGES_BY_COURSE } from "../../graphql";
 import { Loader, Card } from "../../components";
+import { stringCapitalize } from "../../utils";
 
 export default function CollegesByCourses() {
-  const { courseId } = useParams();
+  const { courseId, courseTitle = "" } = useParams();
   const [colleges, setColleges] = useState([]);
   const { loading: isCollegesDataLoading, error: hasError } = useSubscription(
     COLLEGES_BY_COURSE,
@@ -29,6 +30,14 @@ export default function CollegesByCourses() {
   }
   return (
     <Wrap>
+      <div className="section_header">
+        <h3>Colleges for {stringCapitalize(courseTitle)}.</h3>
+        <p className="text-md">
+          Don't worry it just a beggining of the the thing you like,
+          <br />
+          seek information that you find truly interested.
+        </p>
+      </div>
       <div className="cards_wrapper">
         {colleges.map((college) => {
           return <Card type="college-info" key={college.id} data={college} />;

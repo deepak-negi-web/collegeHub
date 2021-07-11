@@ -126,7 +126,7 @@ export default function College() {
                       <td class="column1">{item?.course?.name || "N/A"}</td>
                       <td class="column2">{item?.fees?.fee || "N/A"}</td>
                       <td class="column3">{item?.course?.duration || "N/A"}</td>
-                      <td class="column4">{item?.eligibility[0] || "N/A"}</td>
+                      <td class="column4">{item?.eligibility?.[0] || "N/A"}</td>
                     </tr>
                   );
                 })}

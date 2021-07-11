@@ -35,7 +35,7 @@ export default function Courses() {
   };
 
   if (loading || totalCategoriesLoading) {
-    return <Loader />;
+    return <InlineLoader />;
   }
   if (error || hasErrorInTotal) {
     console.log(error || hasErrorInTotal);
